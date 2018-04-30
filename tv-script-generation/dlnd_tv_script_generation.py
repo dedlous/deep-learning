@@ -434,17 +434,17 @@ tests.test_get_batches(get_batches)
 
 
 # Number of Epochs
-num_epochs = 100
+num_epochs = 170
 # Batch Size
 batch_size = 128
 # RNN Size
-rnn_size = 256
+rnn_size = 512
 # Embedding Dimension Size
 embed_dim = 256
 # Sequence Length
-seq_length = 20
+seq_length = 15
 # Learning Rate
-learning_rate = 0.01
+learning_rate = 0.001
 # Show stats for every n number of batches
 show_every_n_batches = 128
 
@@ -607,7 +607,7 @@ def pick_word(probabilities, int_to_vocab):
     :return: String of the predicted word
     """
     # TODO: Implement Function
-    return int_to_vocab[np.argmax(probabilities)]
+    return np.random.choice(list(int_to_vocab.values()), 1, p=probabilities)[0]
 
 
 """
